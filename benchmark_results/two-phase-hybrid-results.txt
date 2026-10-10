@@ -1,0 +1,1065 @@
+========================================
+Job ID:        15419869
+Nodes:         1
+Tasks:         4
+Node list:     jrc0390
+Working dir:   /p/home/jusers/benslimane1/jureca/GPU_BS_BJJSP-master
+========================================
+NVIDIA A100-SXM4-40GB, 40960 MiB
+NVIDIA A100-SXM4-40GB, 40960 MiB
+NVIDIA A100-SXM4-40GB, 40960 MiB
+NVIDIA A100-SXM4-40GB, 40960 MiB
+========================================
+Starting Hybrid CPU+GPU execution...
+=== Heterogeneous Hybrid CPU+GPU Beam Search (BATCH BENCHMARK) ===
+Target: Taillard Instances ta01.txt to ta80.txt
+GPU beam_width: 25600
+CPU accel_factor: Auto-calibrated
+Iterations PER INSTANCE: 10
+MPI ranks: 16  |  GPUs: 4  |  OpenMP threads/rank: 4
+LB mode: auto (heterogeneous per thread)
+Architecture: Independent Node Search (Zero MPI overhead inside loop)
+==================================================================
+
+
+>>> Starting Instance: ./ta01 <<<
+Auto-calibrating CPU beam width for ./ta01...
+[./ta01] iter   10/10  | Node 0 Best: 1743  (11.1 s elapsed)
+
+=== RESULT FOR ./ta01 ===
+Best makespan            : 1693
+Total execution time     : 11.06 s
+Total partial states     : 2885705418
+Aggregate states/s       : 262570664
+------------------------------------------------------------------
+
+>>> Starting Instance: ./ta02 <<<
+Auto-calibrating CPU beam width for ./ta02...
+
+=== RESULT FOR ./ta02 ===
+Best makespan            : 1645
+Total execution time     : 9.99 s
+Total partial states     : 2845878133
+Aggregate states/s       : 277287087
+------------------------------------------------------------------
+
+>>> Starting Instance: ./ta03 <<<
+Auto-calibrating CPU beam width for ./ta03...
+[./ta03] iter    9/10  | Node 0 Best: 1717  (10.4 s elapsed)
+
+=== RESULT FOR ./ta03 ===
+Best makespan            : 1673
+Total execution time     : 11.56 s
+Total partial states     : 2837435734
+Aggregate states/s       : 251076261
+------------------------------------------------------------------
+
+>>> Starting Instance: ./ta04 <<<
+Auto-calibrating CPU beam width for ./ta04...
+[./ta04] iter    8/10  | Node 0 Best: 1660  (10.7 s elapsed)
+
+=== RESULT FOR ./ta04 ===
+Best makespan            : 1618
+Total execution time     : 13.40 s
+Total partial states     : 2880747895
+Aggregate states/s       : 219706170
+------------------------------------------------------------------
+
+>>> Starting Instance: ./ta05 <<<
+Auto-calibrating CPU beam width for ./ta05...
+[./ta05] iter   10/10  | Node 0 Best: 1680  (10.8 s elapsed)
+
+=== RESULT FOR ./ta05 ===
+Best makespan            : 1680
+Total execution time     : 10.78 s
+Total partial states     : 2934027677
+Aggregate states/s       : 271868245
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta05:
+
+>>> Starting Instance: ./ta06 <<<
+Auto-calibrating CPU beam width for ./ta06...
+[./ta06] iter    8/10  | Node 0 Best: 1756  (10.8 s elapsed)
+
+=== RESULT FOR ./ta06 ===
+Best makespan            : 1694
+Total execution time     : 13.44 s
+Total partial states     : 2895556253
+Aggregate states/s       : 218071825
+------------------------------------------------------------------
+
+>>> Starting Instance: ./ta07 <<<
+Auto-calibrating CPU beam width for ./ta07...
+[./ta07] iter   10/10  | Node 0 Best: 1727  (10.8 s elapsed)
+
+=== RESULT FOR ./ta07 ===
+Best makespan            : 1663
+Total execution time     : 10.78 s
+Total partial states     : 2806313160
+Aggregate states/s       : 261565838
+------------------------------------------------------------------
+
+>>> Starting Instance: ./ta08 <<<
+Auto-calibrating CPU beam width for ./ta08...
+
+=== RESULT FOR ./ta08 ===
+Best makespan            : 1665
+Total execution time     : 9.72 s
+Total partial states     : 2798381753
+Aggregate states/s       : 294492307
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta08:
+
+>>> Starting Instance: ./ta09 <<<
+Auto-calibrating CPU beam width for ./ta09...
+[./ta09] iter   10/10  | Node 0 Best: 1726  (10.7 s elapsed)
+
+=== RESULT FOR ./ta09 ===
+Best makespan            : 1726
+Total execution time     : 10.70 s
+Total partial states     : 2884370895
+Aggregate states/s       : 268151169
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta09:
+
+>>> Starting Instance: ./ta10 <<<
+Auto-calibrating CPU beam width for ./ta10...
+[./ta10] iter    9/10  | Node 0 Best: 1727  (10.2 s elapsed)
+
+=== RESULT FOR ./ta10 ===
+Best makespan            : 1683
+Total execution time     : 11.28 s
+Total partial states     : 2864030132
+Aggregate states/s       : 258169845
+------------------------------------------------------------------
+
+>>> Starting Instance: ./ta11 <<<
+Auto-calibrating CPU beam width for ./ta11...
+[./ta11] iter    8/10  | Node 0 Best: 2064  (10.3 s elapsed)
+
+=== RESULT FOR ./ta11 ===
+Best makespan            : 2051
+Total execution time     : 12.78 s
+Total partial states     : 5175305508
+Aggregate states/s       : 385322606
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta11:
+
+>>> Starting Instance: ./ta12 <<<
+Auto-calibrating CPU beam width for ./ta12...
+[./ta12] iter    9/10  | Node 0 Best: 2218  (10.5 s elapsed)
+
+=== RESULT FOR ./ta12 ===
+Best makespan            : 2163
+Total execution time     : 11.61 s
+Total partial states     : 5259936436
+Aggregate states/s       : 403975564
+------------------------------------------------------------------
+
+>>> Starting Instance: ./ta13 <<<
+Auto-calibrating CPU beam width for ./ta13...
+[./ta13] iter    7/10  | Node 0 Best: 2120  (10.3 s elapsed)
+
+=== RESULT FOR ./ta13 ===
+Best makespan            : 2052
+Total execution time     : 14.63 s
+Total partial states     : 5202064013
+Aggregate states/s       : 348373257
+------------------------------------------------------------------
+
+>>> Starting Instance: ./ta14 <<<
+Auto-calibrating CPU beam width for ./ta14...
+[./ta14] iter    8/10  | Node 0 Best: 2053  (10.8 s elapsed)
+
+=== RESULT FOR ./ta14 ===
+Best makespan            : 2035
+Total execution time     : 13.49 s
+Total partial states     : 5115089968
+Aggregate states/s       : 360497956
+------------------------------------------------------------------
+
+>>> Starting Instance: ./ta15 <<<
+Auto-calibrating CPU beam width for ./ta15...
+[./ta15] iter    9/10  | Node 0 Best: 2050  (11.2 s elapsed)
+
+=== RESULT FOR ./ta15 ===
+Best makespan            : 2050
+Total execution time     : 12.41 s
+Total partial states     : 5251835970
+Aggregate states/s       : 384655772
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta15:
+
+>>> Starting Instance: ./ta16 <<<
+Auto-calibrating CPU beam width for ./ta16...
+[./ta16] iter    9/10  | Node 0 Best: 2173  (10.7 s elapsed)
+
+=== RESULT FOR ./ta16 ===
+Best makespan            : 2173
+Total execution time     : 11.85 s
+Total partial states     : 5238578113
+Aggregate states/s       : 389380386
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta16:
+
+>>> Starting Instance: ./ta17 <<<
+Auto-calibrating CPU beam width for ./ta17...
+[./ta17] iter    8/10  | Node 0 Best: 2233  (11.0 s elapsed)
+
+=== RESULT FOR ./ta17 ===
+Best makespan            : 2233
+Total execution time     : 13.69 s
+Total partial states     : 5129005772
+Aggregate states/s       : 359603800
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta17:
+
+>>> Starting Instance: ./ta18 <<<
+Auto-calibrating CPU beam width for ./ta18...
+[./ta18] iter    9/10  | Node 0 Best: 2126  (11.2 s elapsed)
+
+=== RESULT FOR ./ta18 ===
+Best makespan            : 2126
+Total execution time     : 12.41 s
+Total partial states     : 5205716415
+Aggregate states/s       : 385550701
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta18:
+
+>>> Starting Instance: ./ta19 <<<
+Auto-calibrating CPU beam width for ./ta19...
+[./ta19] iter    8/10  | Node 0 Best: 2084  (11.4 s elapsed)
+
+=== RESULT FOR ./ta19 ===
+Best makespan            : 2062
+Total execution time     : 14.38 s
+Total partial states     : 5183007246
+Aggregate states/s       : 348137860
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta19:
+
+>>> Starting Instance: ./ta20 <<<
+Auto-calibrating CPU beam width for ./ta20...
+[./ta20] iter    7/10  | Node 0 Best: 2157  (10.7 s elapsed)
+
+=== RESULT FOR ./ta20 ===
+Best makespan            : 2153
+Total execution time     : 15.47 s
+Total partial states     : 5151574183
+Aggregate states/s       : 326495376
+------------------------------------------------------------------
+
+>>> Starting Instance: ./ta21 <<<
+Auto-calibrating CPU beam width for ./ta21...
+[./ta21] iter    6/10  | Node 0 Best: 2515  (11.0 s elapsed)
+
+=== RESULT FOR ./ta21 ===
+Best makespan            : 2429
+Total execution time     : 18.07 s
+Total partial states     : 6996591859
+Aggregate states/s       : 323772036
+------------------------------------------------------------------
+
+>>> Starting Instance: ./ta22 <<<
+Auto-calibrating CPU beam width for ./ta22...
+[./ta22] iter    6/10  | Node 0 Best: 2448  (10.9 s elapsed)
+
+=== RESULT FOR ./ta22 ===
+Best makespan            : 2407
+Total execution time     : 18.67 s
+Total partial states     : 7033785094
+Aggregate states/s       : 314585806
+------------------------------------------------------------------
+
+>>> Starting Instance: ./ta23 <<<
+Auto-calibrating CPU beam width for ./ta23...
+[./ta23] iter    6/10  | Node 0 Best: 2415  (11.4 s elapsed)
+
+=== RESULT FOR ./ta23 ===
+Best makespan            : 2334
+Total execution time     : 18.97 s
+Total partial states     : 7001906059
+Aggregate states/s       : 315365597
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta23:
+
+>>> Starting Instance: ./ta24 <<<
+Auto-calibrating CPU beam width for ./ta24...
+[./ta24] iter    5/10  | Node 0 Best: 2561  (10.1 s elapsed)
+
+=== RESULT FOR ./ta24 ===
+Best makespan            : 2519
+Total execution time     : 19.65 s
+Total partial states     : 7015216547
+Aggregate states/s       : 311399558
+------------------------------------------------------------------
+
+>>> Starting Instance: ./ta25 <<<
+Auto-calibrating CPU beam width for ./ta25...
+[./ta25] iter    6/10  | Node 0 Best: 2451  (11.6 s elapsed)
+
+=== RESULT FOR ./ta25 ===
+Best makespan            : 2301
+Total execution time     : 19.10 s
+Total partial states     : 7129068598
+Aggregate states/s       : 321507678
+------------------------------------------------------------------
+
+>>> Starting Instance: ./ta26 <<<
+Auto-calibrating CPU beam width for ./ta26...
+[./ta26] iter    6/10  | Node 0 Best: 2556  (11.6 s elapsed)
+
+=== RESULT FOR ./ta26 ===
+Best makespan            : 2403
+Total execution time     : 19.14 s
+Total partial states     : 7100940480
+Aggregate states/s       : 313870175
+------------------------------------------------------------------
+
+>>> Starting Instance: ./ta27 <<<
+Auto-calibrating CPU beam width for ./ta27...
+[./ta27] iter    6/10  | Node 0 Best: 2631  (11.8 s elapsed)
+
+=== RESULT FOR ./ta27 ===
+Best makespan            : 2573
+Total execution time     : 19.51 s
+Total partial states     : 7057794113
+Aggregate states/s       : 312935138
+------------------------------------------------------------------
+
+>>> Starting Instance: ./ta28 <<<
+Auto-calibrating CPU beam width for ./ta28...
+[./ta28] iter    6/10  | Node 0 Best: 2538  (11.8 s elapsed)
+
+=== RESULT FOR ./ta28 ===
+Best makespan            : 2384
+Total execution time     : 19.90 s
+Total partial states     : 7079566832
+Aggregate states/s       : 313414127
+------------------------------------------------------------------
+
+>>> Starting Instance: ./ta29 <<<
+Auto-calibrating CPU beam width for ./ta29...
+[./ta29] iter    6/10  | Node 0 Best: 2539  (11.4 s elapsed)
+
+=== RESULT FOR ./ta29 ===
+Best makespan            : 2459
+Total execution time     : 19.21 s
+Total partial states     : 7017943363
+Aggregate states/s       : 308797909
+------------------------------------------------------------------
+
+>>> Starting Instance: ./ta30 <<<
+Auto-calibrating CPU beam width for ./ta30...
+[./ta30] iter    6/10  | Node 0 Best: 2468  (11.3 s elapsed)
+
+=== RESULT FOR ./ta30 ===
+Best makespan            : 2367
+Total execution time     : 18.71 s
+Total partial states     : 7054759667
+Aggregate states/s       : 313592140
+------------------------------------------------------------------
+
+>>> Starting Instance: ./ta31 <<<
+Auto-calibrating CPU beam width for ./ta31...
+[./ta31] iter    5/10  | Node 0 Best: 3121  (11.8 s elapsed)
+[./ta31] iter   10/10  | Node 0 Best: 3121  (23.3 s elapsed)
+
+=== RESULT FOR ./ta31 ===
+Best makespan            : 3121
+Total execution time     : 23.27 s
+Total partial states     : 11395099071
+Aggregate states/s       : 394887671
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta31:
+
+>>> Starting Instance: ./ta32 <<<
+Auto-calibrating CPU beam width for ./ta32...
+[./ta32] iter    5/10  | Node 0 Best: 3149  (11.6 s elapsed)
+[./ta32] iter   10/10  | Node 0 Best: 3125  (23.6 s elapsed)
+
+=== RESULT FOR ./ta32 ===
+Best makespan            : 3125
+Total execution time     : 23.64 s
+Total partial states     : 11501856712
+Aggregate states/s       : 390188481
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta32:
+
+>>> Starting Instance: ./ta33 <<<
+Auto-calibrating CPU beam width for ./ta33...
+[./ta33] iter    5/10  | Node 0 Best: 3206  (11.9 s elapsed)
+[./ta33] iter   10/10  | Node 0 Best: 3203  (23.5 s elapsed)
+
+=== RESULT FOR ./ta33 ===
+Best makespan            : 3203
+Total execution time     : 23.54 s
+Total partial states     : 11433443950
+Aggregate states/s       : 381747993
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta33:
+
+>>> Starting Instance: ./ta34 <<<
+Auto-calibrating CPU beam width for ./ta34...
+[./ta34] iter    5/10  | Node 0 Best: 3163  (12.1 s elapsed)
+[./ta34] iter   10/10  | Node 0 Best: 3163  (24.3 s elapsed)
+
+=== RESULT FOR ./ta34 ===
+Best makespan            : 3163
+Total execution time     : 24.33 s
+Total partial states     : 11484957802
+Aggregate states/s       : 384347282
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta34:
+
+>>> Starting Instance: ./ta35 <<<
+Auto-calibrating CPU beam width for ./ta35...
+[./ta35] iter    5/10  | Node 0 Best: 3070  (12.6 s elapsed)
+[./ta35] iter   10/10  | Node 0 Best: 2948  (24.9 s elapsed)
+
+=== RESULT FOR ./ta35 ===
+Best makespan            : 2948
+Total execution time     : 24.86 s
+Total partial states     : 11648966740
+Aggregate states/s       : 379314845
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta35:
+
+>>> Starting Instance: ./ta36 <<<
+Auto-calibrating CPU beam width for ./ta36...
+[./ta36] iter    5/10  | Node 0 Best: 3103  (11.7 s elapsed)
+[./ta36] iter   10/10  | Node 0 Best: 3103  (23.8 s elapsed)
+
+=== RESULT FOR ./ta36 ===
+Best makespan            : 3103
+Total execution time     : 23.84 s
+Total partial states     : 11389215673
+Aggregate states/s       : 378532859
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta36:
+
+>>> Starting Instance: ./ta37 <<<
+Auto-calibrating CPU beam width for ./ta37...
+[./ta37] iter    5/10  | Node 0 Best: 3110  (12.3 s elapsed)
+[./ta37] iter   10/10  | Node 0 Best: 3110  (24.5 s elapsed)
+
+=== RESULT FOR ./ta37 ===
+Best makespan            : 3110
+Total execution time     : 24.55 s
+Total partial states     : 11494461939
+Aggregate states/s       : 376843580
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta37:
+
+>>> Starting Instance: ./ta38 <<<
+Auto-calibrating CPU beam width for ./ta38...
+[./ta38] iter    5/10  | Node 0 Best: 3035  (12.2 s elapsed)
+[./ta38] iter   10/10  | Node 0 Best: 3035  (24.3 s elapsed)
+
+=== RESULT FOR ./ta38 ===
+Best makespan            : 3035
+Total execution time     : 24.27 s
+Total partial states     : 11562812919
+Aggregate states/s       : 376441886
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta38:
+
+>>> Starting Instance: ./ta39 <<<
+Auto-calibrating CPU beam width for ./ta39...
+[./ta39] iter    4/10  | Node 0 Best: 2885  (10.1 s elapsed)
+[./ta39] iter    9/10  | Node 0 Best: 2885  (22.5 s elapsed)
+
+=== RESULT FOR ./ta39 ===
+Best makespan            : 2885
+Total execution time     : 24.92 s
+Total partial states     : 11538243420
+Aggregate states/s       : 373318266
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta39:
+VALIDATION FAILED: Machine 9 overlap
+VALIDATION FAILED: Machine 11 overlap
+
+>>> Starting Instance: ./ta40 <<<
+Auto-calibrating CPU beam width for ./ta40...
+[./ta40] iter    5/10  | Node 0 Best: 3027  (12.2 s elapsed)
+[./ta40] iter   10/10  | Node 0 Best: 3027  (24.4 s elapsed)
+
+=== RESULT FOR ./ta40 ===
+Best makespan            : 3021
+Total execution time     : 24.41 s
+Total partial states     : 11650394981
+Aggregate states/s       : 367775253
+------------------------------------------------------------------
+
+>>> Starting Instance: ./ta41 <<<
+Auto-calibrating CPU beam width for ./ta41...
+[./ta41] iter    3/10  | Node 0 Best: 3473  (12.8 s elapsed)
+[./ta41] iter    6/10  | Node 0 Best: 3473  (25.5 s elapsed)
+[./ta41] iter    9/10  | Node 0 Best: 3473  (38.6 s elapsed)
+
+=== RESULT FOR ./ta41 ===
+Best makespan            : 3473
+Total execution time     : 43.03 s
+Total partial states     : 15741007150
+Aggregate states/s       : 295717004
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta41:
+
+>>> Starting Instance: ./ta42 <<<
+Auto-calibrating CPU beam width for ./ta42...
+[./ta42] iter    3/10  | Node 0 Best: 3451  (13.1 s elapsed)
+[./ta42] iter    6/10  | Node 0 Best: 3439  (26.1 s elapsed)
+[./ta42] iter    9/10  | Node 0 Best: 3423  (39.5 s elapsed)
+
+=== RESULT FOR ./ta42 ===
+Best makespan            : 3402
+Total execution time     : 43.69 s
+Total partial states     : 15802848665
+Aggregate states/s       : 295499509
+------------------------------------------------------------------
+
+>>> Starting Instance: ./ta43 <<<
+Auto-calibrating CPU beam width for ./ta43...
+[./ta43] iter    3/10  | Node 0 Best: 3390  (13.5 s elapsed)
+[./ta43] iter    6/10  | Node 0 Best: 3303  (27.3 s elapsed)
+[./ta43] iter    9/10  | Node 0 Best: 3303  (40.4 s elapsed)
+
+=== RESULT FOR ./ta43 ===
+Best makespan            : 3303
+Total execution time     : 45.18 s
+Total partial states     : 15984919477
+Aggregate states/s       : 292579464
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta43:
+
+>>> Starting Instance: ./ta44 <<<
+Auto-calibrating CPU beam width for ./ta44...
+[./ta44] iter    3/10  | Node 0 Best: 3424  (12.6 s elapsed)
+[./ta44] iter    6/10  | Node 0 Best: 3424  (25.8 s elapsed)
+[./ta44] iter    9/10  | Node 0 Best: 3424  (39.4 s elapsed)
+
+=== RESULT FOR ./ta44 ===
+Best makespan            : 3424
+Total execution time     : 43.55 s
+Total partial states     : 15853138975
+Aggregate states/s       : 292622850
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta44:
+
+>>> Starting Instance: ./ta45 <<<
+Auto-calibrating CPU beam width for ./ta45...
+[./ta45] iter    3/10  | Node 0 Best: 3444  (13.2 s elapsed)
+[./ta45] iter    6/10  | Node 0 Best: 3444  (26.9 s elapsed)
+[./ta45] iter    9/10  | Node 0 Best: 3444  (40.4 s elapsed)
+
+=== RESULT FOR ./ta45 ===
+Best makespan            : 3444
+Total execution time     : 44.74 s
+Total partial states     : 15906149399
+Aggregate states/s       : 289087841
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta45:
+
+>>> Starting Instance: ./ta46 <<<
+Auto-calibrating CPU beam width for ./ta46...
+[./ta46] iter    3/10  | Node 0 Best: 3443  (13.2 s elapsed)
+[./ta46] iter    6/10  | Node 0 Best: 3443  (26.0 s elapsed)
+[./ta46] iter    9/10  | Node 0 Best: 3443  (39.3 s elapsed)
+
+=== RESULT FOR ./ta46 ===
+Best makespan            : 3443
+Total execution time     : 43.79 s
+Total partial states     : 15810684017
+Aggregate states/s       : 290100106
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta46:
+
+>>> Starting Instance: ./ta47 <<<
+Auto-calibrating CPU beam width for ./ta47...
+[./ta47] iter    3/10  | Node 0 Best: 3458  (14.5 s elapsed)
+[./ta47] iter    6/10  | Node 0 Best: 3458  (27.5 s elapsed)
+[./ta47] iter    9/10  | Node 0 Best: 3367  (41.7 s elapsed)
+
+=== RESULT FOR ./ta47 ===
+Best makespan            : 3367
+Total execution time     : 46.53 s
+Total partial states     : 15923831653
+Aggregate states/s       : 285217653
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta47:
+
+>>> Starting Instance: ./ta48 <<<
+Auto-calibrating CPU beam width for ./ta48...
+[./ta48] iter    3/10  | Node 0 Best: 3296  (13.9 s elapsed)
+[./ta48] iter    6/10  | Node 0 Best: 3296  (27.2 s elapsed)
+[./ta48] iter    9/10  | Node 0 Best: 3296  (40.4 s elapsed)
+
+=== RESULT FOR ./ta48 ===
+Best makespan            : 3296
+Total execution time     : 45.02 s
+Total partial states     : 15949284027
+Aggregate states/s       : 287904451
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta48:
+
+>>> Starting Instance: ./ta49 <<<
+Auto-calibrating CPU beam width for ./ta49...
+[./ta49] iter    3/10  | Node 0 Best: 3374  (13.8 s elapsed)
+[./ta49] iter    6/10  | Node 0 Best: 3322  (27.4 s elapsed)
+[./ta49] iter    9/10  | Node 0 Best: 3321  (41.4 s elapsed)
+
+=== RESULT FOR ./ta49 ===
+Best makespan            : 3321
+Total execution time     : 45.85 s
+Total partial states     : 15716299001
+Aggregate states/s       : 284611354
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta4*:
+
+
+>>> Starting Instance: ./ta50 <<<
+Auto-calibrating CPU beam width for ./ta50...
+[./ta50] iter    3/10  | Node 0 Best: 3422  (10.8 s elapsed)
+[./ta50] iter    6/10  | Node 0 Best: 3400  (21.6 s elapsed)
+[./ta50] iter    9/10  | Node 0 Best: 3379  (32.2 s elapsed)
+
+=== RESULT FOR ./ta50 ===
+Best makespan            : 3379
+Total execution time     : 36.09 s
+Total partial states     : 15833252765
+Aggregate states/s       : 346625214
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta50:
+
+>>> Starting Instance: ./ta51 <<<
+Auto-calibrating CPU beam width for ./ta51...
+[./ta51] iter    2/10  | Node 0 Best: 4942  (10.2 s elapsed)
+[./ta51] iter    4/10  | Node 0 Best: 4905  (20.5 s elapsed)
+[./ta51] iter    6/10  | Node 0 Best: 4905  (30.8 s elapsed)
+[./ta51] iter    8/10  | Node 0 Best: 4897  (41.2 s elapsed)
+[./ta51] iter   10/10  | Node 0 Best: 4897  (51.6 s elapsed)
+
+=== RESULT FOR ./ta51 ===
+Best makespan            : 4897
+Total execution time     : 51.64 s
+Total partial states     : 31467236576
+Aggregate states/s       : 460794886
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta51:
+
+>>> Starting Instance: ./ta52 <<<
+Auto-calibrating CPU beam width for ./ta52...
+[./ta52] iter    2/10  | Node 0 Best: 4933  (10.4 s elapsed)
+[./ta52] iter    4/10  | Node 0 Best: 4933  (20.5 s elapsed)
+[./ta52] iter    7/10  | Node 0 Best: 4886  (34.7 s elapsed)
+[./ta52] iter    9/10  | Node 0 Best: 4820  (45.3 s elapsed)
+
+=== RESULT FOR ./ta52 ===
+Best makespan            : 4820
+Total execution time     : 50.38 s
+Total partial states     : 30889948748
+Aggregate states/s       : 456133870
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta52:
+
+>>> Starting Instance: ./ta53 <<<
+Auto-calibrating CPU beam width for ./ta53...
+[./ta53] iter    2/10  | Node 0 Best: 4903  (11.0 s elapsed)
+[./ta53] iter    4/10  | Node 0 Best: 4903  (21.8 s elapsed)
+[./ta53] iter    6/10  | Node 0 Best: 4903  (32.6 s elapsed)
+[./ta53] iter    8/10  | Node 0 Best: 4903  (42.9 s elapsed)
+[./ta53] iter   10/10  | Node 0 Best: 4903  (53.6 s elapsed)
+
+=== RESULT FOR ./ta53 ===
+Best makespan            : 4903
+Total execution time     : 53.59 s
+Total partial states     : 31279545764
+Aggregate states/s       : 451253368
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta53:
+
+>>> Starting Instance: ./ta54 <<<
+Auto-calibrating CPU beam width for ./ta54...
+[./ta54] iter    2/10  | Node 0 Best: 4918  (11.0 s elapsed)
+[./ta54] iter    4/10  | Node 0 Best: 4918  (22.2 s elapsed)
+[./ta54] iter    6/10  | Node 0 Best: 4907  (32.7 s elapsed)
+[./ta54] iter    8/10  | Node 0 Best: 4846  (43.6 s elapsed)
+[./ta54] iter   10/10  | Node 0 Best: 4846  (55.3 s elapsed)
+
+=== RESULT FOR ./ta54 ===
+Best makespan            : 4846
+Total execution time     : 55.34 s
+Total partial states     : 31092516052
+Aggregate states/s       : 445829614
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta54:
+
+>>> Starting Instance: ./ta55 <<<
+Auto-calibrating CPU beam width for ./ta55...
+[./ta55] iter    2/10  | Node 0 Best: 4832  (11.6 s elapsed)
+[./ta55] iter    4/10  | Node 0 Best: 4832  (22.2 s elapsed)
+[./ta55] iter    6/10  | Node 0 Best: 4832  (33.2 s elapsed)
+[./ta55] iter    8/10  | Node 0 Best: 4832  (44.0 s elapsed)
+[./ta55] iter   10/10  | Node 0 Best: 4832  (54.8 s elapsed)
+
+=== RESULT FOR ./ta55 ===
+Best makespan            : 4832
+Total execution time     : 54.79 s
+Total partial states     : 31136080586
+Aggregate states/s       : 437246882
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta55:
+
+>>> Starting Instance: ./ta56 <<<
+Auto-calibrating CPU beam width for ./ta56...
+[./ta56] iter    2/10  | Node 0 Best: 4908  (11.3 s elapsed)
+[./ta56] iter    4/10  | Node 0 Best: 4908  (22.4 s elapsed)
+[./ta56] iter    6/10  | Node 0 Best: 4908  (33.6 s elapsed)
+[./ta56] iter    8/10  | Node 0 Best: 4908  (44.7 s elapsed)
+[./ta56] iter   10/10  | Node 0 Best: 4908  (55.3 s elapsed)
+
+=== RESULT FOR ./ta56 ===
+Best makespan            : 4908
+Total execution time     : 55.27 s
+Total partial states     : 31281639783
+Aggregate states/s       : 433443692
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta56:
+
+>>> Starting Instance: ./ta57 <<<
+Auto-calibrating CPU beam width for ./ta57...
+[./ta57] iter    2/10  | Node 0 Best: 5071  (10.7 s elapsed)
+[./ta57] iter    4/10  | Node 0 Best: 5071  (21.6 s elapsed)
+[./ta57] iter    6/10  | Node 0 Best: 5071  (33.3 s elapsed)
+[./ta57] iter    8/10  | Node 0 Best: 4983  (44.3 s elapsed)
+[./ta57] iter   10/10  | Node 0 Best: 4983  (55.3 s elapsed)
+
+=== RESULT FOR ./ta57 ===
+Best makespan            : 4983
+Total execution time     : 55.32 s
+Total partial states     : 30899144215
+Aggregate states/s       : 427371558
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta57:
+
+>>> Starting Instance: ./ta58 <<<
+Auto-calibrating CPU beam width for ./ta58...
+[./ta58] iter    2/10  | Node 0 Best: 5004  (11.6 s elapsed)
+[./ta58] iter    4/10  | Node 0 Best: 5004  (22.5 s elapsed)
+[./ta58] iter    6/10  | Node 0 Best: 5004  (34.3 s elapsed)
+[./ta58] iter    8/10  | Node 0 Best: 5004  (45.7 s elapsed)
+[./ta58] iter   10/10  | Node 0 Best: 5004  (57.0 s elapsed)
+
+=== RESULT FOR ./ta58 ===
+Best makespan            : 5004
+Total execution time     : 56.97 s
+Total partial states     : 31154076666
+Aggregate states/s       : 429083468
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta58:
+
+>>> Starting Instance: ./ta59 <<<
+Auto-calibrating CPU beam width for ./ta59...
+[./ta59] iter    2/10  | Node 0 Best: 4938  (11.8 s elapsed)
+[./ta59] iter    4/10  | Node 0 Best: 4827  (23.0 s elapsed)
+[./ta59] iter    6/10  | Node 0 Best: 4827  (34.1 s elapsed)
+[./ta59] iter    8/10  | Node 0 Best: 4827  (45.7 s elapsed)
+[./ta59] iter   10/10  | Node 0 Best: 4827  (57.1 s elapsed)
+
+=== RESULT FOR ./ta59 ===
+Best makespan            : 4827
+Total execution time     : 57.12 s
+Total partial states     : 31329935887
+Aggregate states/s       : 415578907
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta59:
+
+>>> Starting Instance: ./ta60 <<<
+Auto-calibrating CPU beam width for ./ta60...
+[./ta60] iter    2/10  | Node 0 Best: 4963  (11.5 s elapsed)
+[./ta60] iter    4/10  | Node 0 Best: 4963  (23.2 s elapsed)
+[./ta60] iter    6/10  | Node 0 Best: 4963  (34.8 s elapsed)
+[./ta60] iter    8/10  | Node 0 Best: 4963  (45.9 s elapsed)
+[./ta60] iter   10/10  | Node 0 Best: 4963  (57.3 s elapsed)
+
+=== RESULT FOR ./ta60 ===
+Best makespan            : 4963
+Total execution time     : 57.29 s
+Total partial states     : 30955987707
+Aggregate states/s       : 419831554
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta60:
+
+>>> Starting Instance: ./ta61 <<<
+Auto-calibrating CPU beam width for ./ta61...
+[./ta61] iter    2/10  | Node 0 Best: 5572  (19.3 s elapsed)
+[./ta61] iter    4/10  | Node 0 Best: 5572  (37.5 s elapsed)
+[./ta61] iter    6/10  | Node 0 Best: 5572  (56.4 s elapsed)
+[./ta61] iter    7/10  | Node 0 Best: 5572  (66.6 s elapsed)
+[./ta61] iter    9/10  | Node 0 Best: 5572  (85.5 s elapsed)
+
+=== RESULT FOR ./ta61 ===
+Best makespan            : 5572
+Total execution time     : 94.35 s
+Total partial states     : 42556491681
+Aggregate states/s       : 344217543
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta61:
+
+>>> Starting Instance: ./ta62 <<<
+Auto-calibrating CPU beam width for ./ta62...
+[./ta62] iter    2/10  | Node 0 Best: 5515  (18.4 s elapsed)
+[./ta62] iter    4/10  | Node 0 Best: 5515  (35.0 s elapsed)
+[./ta62] iter    6/10  | Node 0 Best: 5515  (53.8 s elapsed)
+[./ta62] iter    8/10  | Node 0 Best: 5515  (71.4 s elapsed)
+[./ta62] iter   10/10  | Node 0 Best: 5515  (88.7 s elapsed)
+
+=== RESULT FOR ./ta62 ===
+Best makespan            : 5515
+Total execution time     : 88.74 s
+Total partial states     : 42152636912
+Aggregate states/s       : 344484230
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta62:
+
+>>> Starting Instance: ./ta63 <<<
+Auto-calibrating CPU beam width for ./ta63...
+[./ta63] iter    2/10  | Node 0 Best: 5478  (18.5 s elapsed)
+[./ta63] iter    4/10  | Node 0 Best: 5435  (37.8 s elapsed)
+[./ta63] iter    6/10  | Node 0 Best: 5435  (57.3 s elapsed)
+[./ta63] iter    8/10  | Node 0 Best: 5435  (76.1 s elapsed)
+[./ta63] iter   10/10  | Node 0 Best: 5435  (95.0 s elapsed)
+
+=== RESULT FOR ./ta63 ===
+Best makespan            : 5435
+Total execution time     : 95.02 s
+Total partial states     : 42228187539
+Aggregate states/s       : 341415872
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta63:
+
+>>> Starting Instance: ./ta64 <<<
+Auto-calibrating CPU beam width for ./ta64...
+[./ta64] iter    2/10  | Node 0 Best: 5430  (19.7 s elapsed)
+[./ta64] iter    3/10  | Node 0 Best: 5239  (29.7 s elapsed)
+[./ta64] iter    4/10  | Node 0 Best: 5239  (40.1 s elapsed)
+[./ta64] iter    6/10  | Node 0 Best: 5218  (59.1 s elapsed)
+[./ta64] iter    8/10  | Node 0 Best: 5218  (77.5 s elapsed)
+[./ta64] iter   10/10  | Node 0 Best: 5218  (97.3 s elapsed)
+
+=== RESULT FOR ./ta64 ===
+Best makespan            : 5218
+Total execution time     : 97.32 s
+Total partial states     : 42544655165
+Aggregate states/s       : 336934563
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta64:
+
+>>> Starting Instance: ./ta65 <<<
+Auto-calibrating CPU beam width for ./ta65...
+[./ta65] iter    2/10  | Node 0 Best: 5608  (18.3 s elapsed)
+[./ta65] iter    4/10  | Node 0 Best: 5422  (36.1 s elapsed)
+[./ta65] iter    6/10  | Node 0 Best: 5422  (55.6 s elapsed)
+[./ta65] iter    8/10  | Node 0 Best: 5422  (74.2 s elapsed)
+[./ta65] iter   10/10  | Node 0 Best: 5422  (93.5 s elapsed)
+
+=== RESULT FOR ./ta65 ===
+Best makespan            : 5422
+Total execution time     : 93.53 s
+Total partial states     : 41949730284
+Aggregate states/s       : 338934619
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta65:
+
+>>> Starting Instance: ./ta66 <<<
+Auto-calibrating CPU beam width for ./ta66...
+[./ta66] iter    2/10  | Node 0 Best: 5624  (18.7 s elapsed)
+[./ta66] iter    4/10  | Node 0 Best: 5521  (38.3 s elapsed)
+[./ta66] iter    5/10  | Node 0 Best: 5521  (48.5 s elapsed)
+[./ta66] iter    7/10  | Node 0 Best: 5521  (67.1 s elapsed)
+[./ta66] iter    8/10  | Node 0 Best: 5521  (77.2 s elapsed)
+[./ta66] iter   10/10  | Node 0 Best: 5521  (96.8 s elapsed)
+
+=== RESULT FOR ./ta66 ===
+Best makespan            : 5521
+Total execution time     : 96.85 s
+Total partial states     : 42051470705
+Aggregate states/s       : 334630784
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta66:
+
+>>> Starting Instance: ./ta67 <<<
+Auto-calibrating CPU beam width for ./ta67...
+[./ta67] iter    1/10  | Node 0 Best: 5437  (10.1 s elapsed)
+[./ta67] iter    3/10  | Node 0 Best: 5437  (29.5 s elapsed)
+[./ta67] iter    5/10  | Node 0 Best: 5433  (48.9 s elapsed)
+[./ta67] iter    7/10  | Node 0 Best: 5433  (67.4 s elapsed)
+[./ta67] iter    9/10  | Node 0 Best: 5433  (87.8 s elapsed)
+
+=== RESULT FOR ./ta67 ===
+Best makespan            : 5433
+Total execution time     : 97.31 s
+Total partial states     : 42169774246
+Aggregate states/s       : 328550168
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta67:
+
+>>> Starting Instance: ./ta68 <<<
+Auto-calibrating CPU beam width for ./ta68...
+[./ta68] iter    1/10  | Node 0 Best: 5571  (10.2 s elapsed)
+[./ta68] iter    3/10  | Node 0 Best: 5533  (29.7 s elapsed)
+[./ta68] iter    5/10  | Node 0 Best: 5533  (48.3 s elapsed)
+[./ta68] iter    6/10  | Node 0 Best: 5442  (59.6 s elapsed)
+[./ta68] iter    7/10  | Node 0 Best: 5442  (70.2 s elapsed)
+[./ta68] iter    8/10  | Node 0 Best: 5442  (81.4 s elapsed)
+[./ta68] iter   10/10  | Node 0 Best: 5442  (100.1 s elapsed)
+
+=== RESULT FOR ./ta68 ===
+Best makespan            : 5442
+Total execution time     : 100.13 s
+Total partial states     : 42431583364
+Aggregate states/s       : 332393527
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta68:
+
+>>> Starting Instance: ./ta69 <<<
+Auto-calibrating CPU beam width for ./ta69...
+[./ta69] iter    2/10  | Node 0 Best: 5629  (19.9 s elapsed)
+[./ta69] iter    3/10  | Node 0 Best: 5629  (30.0 s elapsed)
+[./ta69] iter    4/10  | Node 0 Best: 5629  (40.6 s elapsed)
+[./ta69] iter    5/10  | Node 0 Best: 5629  (50.6 s elapsed)
+[./ta69] iter    7/10  | Node 0 Best: 5629  (69.4 s elapsed)
+[./ta69] iter    9/10  | Node 0 Best: 5611  (88.2 s elapsed)
+
+=== RESULT FOR ./ta69 ===
+Best makespan            : 5611
+Total execution time     : 97.99 s
+Total partial states     : 41767951700
+Aggregate states/s       : 334616923
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta69:
+
+>>> Starting Instance: ./ta70 <<<
+Auto-calibrating CPU beam width for ./ta70...
+[./ta70] iter    2/10  | Node 0 Best: 5653  (18.9 s elapsed)
+[./ta70] iter    4/10  | Node 0 Best: 5552  (37.6 s elapsed)
+[./ta70] iter    5/10  | Node 0 Best: 5552  (47.8 s elapsed)
+[./ta70] iter    7/10  | Node 0 Best: 5494  (67.8 s elapsed)
+[./ta70] iter    9/10  | Node 0 Best: 5494  (86.7 s elapsed)
+
+=== RESULT FOR ./ta70 ===
+Best makespan            : 5494
+Total execution time     : 96.19 s
+Total partial states     : 41546659889
+Aggregate states/s       : 332041920
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta70:
+
+
+=== RESULT FOR ./ta71.txt ===
+Best makespan            : 10753
+Total execution time     : 348.80 s
+Total partial states     : 162559702632
+Aggregate states/s       : 355266902
+
+=== RESULT FOR ./ta72.txt ===
+Best makespan            : 10399
+Total execution time     : 345.19 s
+Total partial states     : 163762220503
+Aggregate states/s       : 347418958
+
+=== RESULT FOR ./ta73.txt ===
+Best makespan            : 10836
+Total execution time     : 338.50 s
+Total partial states     : 161013170633
+Aggregate states/s       : 350116986
+
+=== RESULT FOR ./ta74.txt ===
+Best makespan            : 10626
+Total execution time     : 352.45 s
+Total partial states     : 162165390393
+Aggregate states/s       : 343094783
+
+=== RESULT FOR ./ta75.txt ===
+Best makespan            : 10495
+Total execution time     : 331.29 s
+Total partial states     : 159069054744
+Aggregate states/s       : 341298140
+
+=== RESULT FOR ./ta76.txt ===
+Best makespan            : 10689
+Total execution time     : 351.37 s
+Total partial states     : 161314241858
+Aggregate states/s       : 334385943
+
+=== RESULT FOR ./ta77.txt ===
+Best makespan            : 10861
+Total execution time     : 345.65 s
+Total partial states     : 161970405692
+Aggregate states/s       : 335388503
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta77.txt:
+
+>>> Starting Instance: ./ta78.txt <<<
+Auto-calibrating CPU beam width for ./ta78.txt...
+[./ta78.txt] iter    1/10  | Node 0 Best: 10683  (37.4 s elapsed)
+[./ta78.txt] iter    2/10  | Node 0 Best: 10683  (71.8 s elapsed)
+[./ta78.txt] iter    3/10  | Node 0 Best: 10683  (106.2 s elapsed)
+[./ta78.txt] iter    4/10  | Node 0 Best: 10683  (138.0 s elapsed)
+[./ta78.txt] iter    5/10  | Node 0 Best: 10683  (172.4 s elapsed)
+[./ta78.txt] iter    6/10  | Node 0 Best: 10683  (205.7 s elapsed)
+[./ta78.txt] iter    7/10  | Node 0 Best: 10635  (240.0 s elapsed)
+[./ta78.txt] iter    8/10  | Node 0 Best: 10635  (274.9 s elapsed)
+[./ta78.txt] iter    9/10  | Node 0 Best: 10635  (309.1 s elapsed)
+[./ta78.txt] iter   10/10  | Node 0 Best: 10635  (341.4 s elapsed)
+
+=== RESULT FOR ./ta78.txt ===
+Best makespan            : 10635
+Total execution time     : 341.43 s
+Total partial states     : 162470340633
+Aggregate states/s       : 359955302
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta78.txt:
+
+>>> Starting Instance: ./ta79.txt <<<
+Auto-calibrating CPU beam width for ./ta79.txt...
+[./ta79.txt] iter    1/10  | Node 0 Best: 11049  (31.5 s elapsed)
+[./ta79.txt] iter    2/10  | Node 0 Best: 10977  (61.1 s elapsed)
+[./ta79.txt] iter    3/10  | Node 0 Best: 10977  (93.6 s elapsed)
+[./ta79.txt] iter    4/10  | Node 0 Best: 10977  (125.8 s elapsed)
+[./ta79.txt] iter    5/10  | Node 0 Best: 10977  (157.9 s elapsed)
+[./ta79.txt] iter    6/10  | Node 0 Best: 10977  (190.2 s elapsed)
+[./ta79.txt] iter    7/10  | Node 0 Best: 10849  (222.4 s elapsed)
+[./ta79.txt] iter    8/10  | Node 0 Best: 10849  (253.6 s elapsed)
+[./ta79.txt] iter    9/10  | Node 0 Best: 10849  (285.0 s elapsed)
+[./ta79.txt] iter   10/10  | Node 0 Best: 10849  (316.9 s elapsed)
+
+=== RESULT FOR ./ta79.txt ===
+Best makespan            : 10849
+Total execution time     : 316.93 s
+Total partial states     : 159971547260
+Aggregate states/s       : 353154609
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta79.txt:
+
+>>> Starting Instance: ./ta80.txt <<<
+Auto-calibrating CPU beam width for ./ta80.txt...
+[./ta80.txt] iter    1/10  | Node 0 Best: 10520  (31.8 s elapsed)
+[./ta80.txt] iter    2/10  | Node 0 Best: 10520  (65.2 s elapsed)
+[./ta80.txt] iter    3/10  | Node 0 Best: 10520  (96.6 s elapsed)
+[./ta80.txt] iter    4/10  | Node 0 Best: 10520  (128.2 s elapsed)
+[./ta80.txt] iter    5/10  | Node 0 Best: 10520  (161.4 s elapsed)
+[./ta80.txt] iter    6/10  | Node 0 Best: 10520  (191.6 s elapsed)
+[./ta80.txt] iter    7/10  | Node 0 Best: 10520  (222.7 s elapsed)
+[./ta80.txt] iter    8/10  | Node 0 Best: 10520  (255.5 s elapsed)
+[./ta80.txt] iter    9/10  | Node 0 Best: 10520  (288.2 s elapsed)
+[./ta80.txt] iter   10/10  | Node 0 Best: 10520  (320.6 s elapsed)
+
+=== RESULT FOR ./ta80.txt ===
+Best makespan            : 10520
+Total execution time     : 320.55 s
+Total partial states     : 159461095561
+Aggregate states/s       : 339462195
+------------------------------------------------------------------
+Rank 0 validating the global best solution for ./ta80.txt:
+
