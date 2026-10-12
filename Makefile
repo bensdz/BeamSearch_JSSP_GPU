@@ -44,25 +44,37 @@ HYBRID_LB_BIN    := exechybrid_lb
 BENCH_HYBRID_SRC := hybrid/v1/benchmark_hybrid.cu
 BENCH_HYBRID_BIN := exechybrid_bench
 
-BS_ICH_SRC       := cpu/v0/BS-ICH.cpp
+BS_ICH_SRCS      := cpu/v0_ich/main.cpp cpu/v0_ich/solver.cpp cpu/common/instance_parser.cpp
 BS_ICH_BIN       := BS-ICH
 
-BS_PMS_SRC       := cpu/v0/BS-PMS.cpp
+BS_PMS_SRCS      := cpu/v1_pms/main.cpp cpu/v1_pms/solver.cpp cpu/common/instance_parser.cpp
 BS_PMS_BIN       := BS-PMS
+
+BS_PMS_BENCH_SRCS:= cpu/v1_pms/benchmark.cpp cpu/v1_pms/solver.cpp cpu/common/instance_parser.cpp
+BS_PMS_BENCH_BIN := BS-PMS-bench
+
+CPU_FEAS_SRCS    := cpu/profiling/gpu_feasibility.cpp cpu/common/instance_parser.cpp
+CPU_FEAS_BIN     := exec_cpu_feasibility
+
+CPU_TIME_WIDTH_SRCS := cpu/profiling/time_width_study.cpp cpu/v1_pms/solver.cpp cpu/common/instance_parser.cpp
+CPU_TIME_WIDTH_BIN  := exec_cpu_time_width
 
 # =============================================================================
 #  Phony targets
 # =============================================================================
-.PHONY: compile run run-pms run-ich run-bench clean help
+.PHONY: compile run run-pms run-ich run-bench run-pms-bench run-feasibility run-time-width clean help
 
 # ── compile: build all executables ───────────────────────────────────────────
-compile: $(HYBRID_LB_BIN) $(BENCH_HYBRID_BIN) $(BS_ICH_BIN) $(BS_PMS_BIN)
+compile: $(HYBRID_LB_BIN) $(BENCH_HYBRID_BIN) $(BS_ICH_BIN) $(BS_PMS_BIN) $(BS_PMS_BENCH_BIN) $(CPU_FEAS_BIN) $(CPU_TIME_WIDTH_BIN)
 	@echo ""
 	@echo "  ✓  Build complete."
 	@echo "      $(HYBRID_LB_BIN)      — single-instance hybrid solver"
 	@echo "      $(BENCH_HYBRID_BIN)  — Lawrence benchmark suite"
 	@echo "      $(BS_ICH_BIN)             — Sequential BS-ICH solver"
 	@echo "      $(BS_PMS_BIN)             — Parallel Multi-Strategy (BS-PMS) solver"
+	@echo "      $(BS_PMS_BENCH_BIN)       — BS-PMS Lawrence benchmark suite"
+	@echo "      $(CPU_FEAS_BIN)   — CPU feasibility profiling"
+	@echo "      $(CPU_TIME_WIDTH_BIN)  — CPU time vs beam width study"
 	@echo ""
 
 $(HYBRID_LB_BIN): $(HYBRID_LB_SRC)
@@ -71,11 +83,20 @@ $(HYBRID_LB_BIN): $(HYBRID_LB_SRC)
 $(BENCH_HYBRID_BIN): $(BENCH_HYBRID_SRC)
 	$(NVCC) $(NVCC_FLAGS) $(OMP_FLAGS) -o $@ $< $(LINK_LIBS)
 
-$(BS_ICH_BIN): $(BS_ICH_SRC)
-	$(CXX) $(CXX_FLAGS) -o $@ $<
+$(BS_ICH_BIN): $(BS_ICH_SRCS)
+	$(CXX) $(CXX_FLAGS) -Icpu/common -o $@ $^
 
-$(BS_PMS_BIN): $(BS_PMS_SRC)
-	$(MPICXX) $(CXX_FLAGS) -o $@ $<
+$(BS_PMS_BIN): $(BS_PMS_SRCS)
+	$(MPICXX) $(CXX_FLAGS) -Icpu/common -o $@ $^
+
+$(BS_PMS_BENCH_BIN): $(BS_PMS_BENCH_SRCS)
+	$(MPICXX) $(CXX_FLAGS) -Icpu/common -o $@ $^
+
+$(CPU_FEAS_BIN): $(CPU_FEAS_SRCS)
+	$(MPICXX) $(CXX_FLAGS) -Icpu/common -o $@ $^
+
+$(CPU_TIME_WIDTH_BIN): $(CPU_TIME_WIDTH_SRCS)
+	$(MPICXX) $(CXX_FLAGS) -Icpu/common -Icpu/v1_pms -o $@ $^
 
 # ── run: launch the hybrid_large_beam solver ─────────────────────────────────
 run: $(HYBRID_LB_BIN)
@@ -110,9 +131,30 @@ run-bench: $(BENCH_HYBRID_BIN)
 	OMP_NUM_THREADS=$(OMP_THREADS) OMP_PLACES=cores OMP_PROC_BIND=close \
 	$(MPIRUN) -n $(NP) ./$(BENCH_HYBRID_BIN)
 
+# ── run-pms-bench: launch the BS-PMS Lawrence benchmark suite ────────────────
+run-pms-bench: $(BS_PMS_BENCH_BIN)
+	@echo ""
+	@echo "  ▶  Launching BS-PMS Lawrence benchmark ($(NP_PMS) MPI ranks)"
+	@echo ""
+	$(MPIRUN) -n $(NP_PMS) ./$(BS_PMS_BENCH_BIN)
+
+# ── run-feasibility: launch CPU feasibility study ────────────────────────────
+run-feasibility: $(CPU_FEAS_BIN)
+	@echo ""
+	@echo "  ▶  Launching CPU feasibility study on instance $(INSTANCE)"
+	@echo ""
+	$(MPIRUN) -n $(NP_PMS) ./$(CPU_FEAS_BIN) $(INSTANCE)
+
+# ── run-time-width: launch CPU time vs beam width study ──────────────────────
+run-time-width: $(CPU_TIME_WIDTH_BIN)
+	@echo ""
+	@echo "  ▶  Launching CPU time vs beam width study"
+	@echo ""
+	$(MPIRUN) -n $(NP_PMS) ./$(CPU_TIME_WIDTH_BIN)
+
 # ── clean: remove built binaries ─────────────────────────────────────────────
 clean:
-	rm -f $(HYBRID_LB_BIN) $(BENCH_HYBRID_BIN) $(BS_ICH_BIN) $(BS_PMS_BIN)
+	rm -f $(HYBRID_LB_BIN) $(BENCH_HYBRID_BIN) $(BS_ICH_BIN) $(BS_PMS_BIN) $(BS_PMS_BENCH_BIN) $(CPU_FEAS_BIN) $(CPU_TIME_WIDTH_BIN)
 	@echo "  ✓  Cleaned."
 
 # ── help: print usage information ────────────────────────────────────────────
@@ -123,7 +165,10 @@ help:
 	@echo "    make run [VAR=val ...]        Run hybrid_large_beam solver"
 	@echo "    make run-pms [VAR=val ...]    Run BS-PMS solver (20 MPI processes)"
 	@echo "    make run-ich [VAR=val ...]    Run BS-ICH solver (sequential)"
-	@echo "    make run-bench                Run Lawrence benchmark suite"
+	@echo "    make run-bench                Run hybrid Lawrence benchmark suite"
+	@echo "    make run-pms-bench            Run BS-PMS Lawrence benchmark suite"
+	@echo "    make run-feasibility          Run CPU feasibility profiling study"
+	@echo "    make run-time-width           Run CPU time vs beam width study"
 	@echo "    make clean                    Remove binaries"
 	@echo ""
 	@echo "  Overridable variables:"

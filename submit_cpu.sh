@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --account=exalab
 #SBATCH --partition=dc-gpu
-#SBATCH --job-name=bjssp_cpu_benchmark
+#SBATCH --job-name=jssp_cpu_benchmark
 #SBATCH --nodes=4
 #SBATCH --ntasks-per-node=4
 #SBATCH --cpus-per-task=1
@@ -30,11 +30,11 @@ echo "CPU Information:"
 lscpu | grep -E "CPU|Core|Socket"
 echo "========================================"
 
-# Compile BS-PMS.cpp with standard C++ compiler (no CUDA)
-echo "Compiling BS-PMS.cpp for CPU..."
-mpiCC -O3 \
+# Compile BS-PMS
+echo "Compiling BS-PMS for CPU..."
+mpicxx -O3 -std=c++11 -Icpu/common \
      -o execkbest_cpu \
-     cpu/v0/BS-PMS.cpp
+     cpu/v1_pms/main.cpp cpu/v1_pms/solver.cpp cpu/common/instance_parser.cpp
 
 if [ $? -ne 0 ]; then
     echo "CPU compilation failed!"
