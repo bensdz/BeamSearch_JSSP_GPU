@@ -59,13 +59,25 @@ CPU_FEAS_BIN     := exec_cpu_feasibility
 CPU_TIME_WIDTH_SRCS := cpu/profiling/time_width_study.cpp cpu/v1_pms/solver.cpp cpu/common/instance_parser.cpp
 CPU_TIME_WIDTH_BIN  := exec_cpu_time_width
 
+GPU_V1_SRCS      := gpu/v1/main.cu gpu/v1/solver.cu cpu/common/instance_parser.cpp
+GPU_V1_BIN       := exec_gpu_v1
+
+GPU_V1_BENCH_SRCS:= gpu/v1/benchmark.cu gpu/v1/solver.cu cpu/common/instance_parser.cpp
+GPU_V1_BENCH_BIN := exec_gpu_v1_bench
+
+GPU_V2_SRCS      := gpu/v2_twophases/main.cu gpu/v2_twophases/solver.cu cpu/common/instance_parser.cpp
+GPU_V2_BIN       := exec_gpu_v2
+
+GPU_V2_BENCH_SRCS:= gpu/v2_twophases/benchmark.cu gpu/v2_twophases/solver.cu cpu/common/instance_parser.cpp
+GPU_V2_BENCH_BIN := exec_gpu_v2_bench
+
 # =============================================================================
 #  Phony targets
 # =============================================================================
-.PHONY: compile run run-pms run-ich run-bench run-pms-bench run-feasibility run-time-width clean help
+.PHONY: compile run run-pms run-ich run-bench run-pms-bench run-feasibility run-time-width run-gpu-v1 run-gpu-v1-bench run-gpu-v2 run-gpu-v2-bench clean help
 
 # ── compile: build all executables ───────────────────────────────────────────
-compile: $(HYBRID_LB_BIN) $(BENCH_HYBRID_BIN) $(BS_ICH_BIN) $(BS_PMS_BIN) $(BS_PMS_BENCH_BIN) $(CPU_FEAS_BIN) $(CPU_TIME_WIDTH_BIN)
+compile: $(HYBRID_LB_BIN) $(BENCH_HYBRID_BIN) $(BS_ICH_BIN) $(BS_PMS_BIN) $(BS_PMS_BENCH_BIN) $(CPU_FEAS_BIN) $(CPU_TIME_WIDTH_BIN) $(GPU_V1_BIN) $(GPU_V1_BENCH_BIN) $(GPU_V2_BIN) $(GPU_V2_BENCH_BIN)
 	@echo ""
 	@echo "  ✓  Build complete."
 	@echo "      $(HYBRID_LB_BIN)      — single-instance hybrid solver"
@@ -75,6 +87,10 @@ compile: $(HYBRID_LB_BIN) $(BENCH_HYBRID_BIN) $(BS_ICH_BIN) $(BS_PMS_BIN) $(BS_P
 	@echo "      $(BS_PMS_BENCH_BIN)       — BS-PMS Lawrence benchmark suite"
 	@echo "      $(CPU_FEAS_BIN)   — CPU feasibility profiling"
 	@echo "      $(CPU_TIME_WIDTH_BIN)  — CPU time vs beam width study"
+	@echo "      $(GPU_V1_BIN)          — GPU v1 single-instance solver"
+	@echo "      $(GPU_V1_BENCH_BIN)    — GPU v1 Lawrence benchmark suite"
+	@echo "      $(GPU_V2_BIN)          — GPU v2 two-phase solver"
+	@echo "      $(GPU_V2_BENCH_BIN)    — GPU v2 Lawrence benchmark suite"
 	@echo ""
 
 $(HYBRID_LB_BIN): $(HYBRID_LB_SRC)
@@ -97,6 +113,18 @@ $(CPU_FEAS_BIN): $(CPU_FEAS_SRCS)
 
 $(CPU_TIME_WIDTH_BIN): $(CPU_TIME_WIDTH_SRCS)
 	$(MPICXX) $(CXX_FLAGS) -Icpu/common -Icpu/v1_pms -o $@ $^
+
+$(GPU_V1_BIN): $(GPU_V1_SRCS)
+	$(NVCC) $(NVCC_FLAGS) -Icpu/common -Igpu/common -o $@ $^
+
+$(GPU_V1_BENCH_BIN): $(GPU_V1_BENCH_SRCS)
+	$(NVCC) $(NVCC_FLAGS) -Icpu/common -Igpu/common -o $@ $^
+
+$(GPU_V2_BIN): $(GPU_V2_SRCS)
+	$(NVCC) $(NVCC_FLAGS) -Icpu/common -Igpu/common -o $@ $^
+
+$(GPU_V2_BENCH_BIN): $(GPU_V2_BENCH_SRCS)
+	$(NVCC) $(NVCC_FLAGS) -Icpu/common -Igpu/common -o $@ $^
 
 # ── run: launch the hybrid_large_beam solver ─────────────────────────────────
 run: $(HYBRID_LB_BIN)
@@ -152,9 +180,39 @@ run-time-width: $(CPU_TIME_WIDTH_BIN)
 	@echo ""
 	$(MPIRUN) -n $(NP_PMS) ./$(CPU_TIME_WIDTH_BIN)
 
+# ── run-gpu-v1: launch GPU v1 single-instance solver ─────────────────────────
+run-gpu-v1: $(GPU_V1_BIN)
+	@echo ""
+	@echo "  ▶  Launching GPU v1 solver"
+	@echo "     Instance : $(INSTANCE)  |  Beam : $(BEAM_WIDTH)"
+	@echo ""
+	./$(GPU_V1_BIN) $(INSTANCE) $(BEAM_WIDTH)
+
+# ── run-gpu-v1-bench: launch GPU v1 Lawrence benchmark suite ─────────────────
+run-gpu-v1-bench: $(GPU_V1_BENCH_BIN)
+	@echo ""
+	@echo "  ▶  Launching GPU v1 Lawrence benchmark suite"
+	@echo ""
+	./$(GPU_V1_BENCH_BIN)
+
+# ── run-gpu-v2: launch GPU v2 two-phase solver ───────────────────────────────
+run-gpu-v2: $(GPU_V2_BIN)
+	@echo ""
+	@echo "  ▶  Launching GPU v2 two-phase solver"
+	@echo "     Instance : $(INSTANCE)  |  Beam : $(BEAM_WIDTH)"
+	@echo ""
+	./$(GPU_V2_BIN) $(INSTANCE) $(BEAM_WIDTH)
+
+# ── run-gpu-v2-bench: launch GPU v2 Lawrence benchmark suite ─────────────────
+run-gpu-v2-bench: $(GPU_V2_BENCH_BIN)
+	@echo ""
+	@echo "  ▶  Launching GPU v2 Lawrence benchmark suite"
+	@echo ""
+	./$(GPU_V2_BENCH_BIN)
+
 # ── clean: remove built binaries ─────────────────────────────────────────────
 clean:
-	rm -f $(HYBRID_LB_BIN) $(BENCH_HYBRID_BIN) $(BS_ICH_BIN) $(BS_PMS_BIN) $(BS_PMS_BENCH_BIN) $(CPU_FEAS_BIN) $(CPU_TIME_WIDTH_BIN)
+	rm -f $(HYBRID_LB_BIN) $(BENCH_HYBRID_BIN) $(BS_ICH_BIN) $(BS_PMS_BIN) $(BS_PMS_BENCH_BIN) $(CPU_FEAS_BIN) $(CPU_TIME_WIDTH_BIN) $(GPU_V1_BIN) $(GPU_V1_BENCH_BIN) $(GPU_V2_BIN) $(GPU_V2_BENCH_BIN)
 	@echo "  ✓  Cleaned."
 
 # ── help: print usage information ────────────────────────────────────────────
@@ -169,6 +227,10 @@ help:
 	@echo "    make run-pms-bench            Run BS-PMS Lawrence benchmark suite"
 	@echo "    make run-feasibility          Run CPU feasibility profiling study"
 	@echo "    make run-time-width           Run CPU time vs beam width study"
+	@echo "    make run-gpu-v1               Run GPU v1 solver"
+	@echo "    make run-gpu-v1-bench         Run GPU v1 Lawrence benchmark suite"
+	@echo "    make run-gpu-v2               Run GPU v2 two-phase solver"
+	@echo "    make run-gpu-v2-bench         Run GPU v2 Lawrence benchmark suite"
 	@echo "    make clean                    Remove binaries"
 	@echo ""
 	@echo "  Overridable variables:"
