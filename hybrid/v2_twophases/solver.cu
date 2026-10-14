@@ -25,7 +25,7 @@ int run_hybrid_iteration_v2(
 
         if (tid == 0) {
             // GPU two-phase beam search pass on primary thread
-            int seed = 12345 + rank * 1000 + iteration;
+            int seed = rand();
             result = run_gpu_beam_search_v2(inst, gpu_beam_width, best_known, seed);
         } else {
             // CPU beam search pass on worker thread

@@ -17,7 +17,7 @@ int main(int argc, char** argv)
 
     char instance_file[512] = "./la33.txt";
     int  beam_width = 5000;
-    int  num_iterations = 500;
+    int  num_iterations = 100;
 
     // Parse command line arguments
     if (argc > 1) {
@@ -68,7 +68,7 @@ int main(int argc, char** argv)
         // Share minimum makespan across ranks
         MPI_Allreduce(&local_best, &global_best, 1, MPI_INT, MPI_MIN, MPI_COMM_WORLD);
 
-        if (my_rank == 0 && iter % 50 == 0)
+        if (my_rank == 0 && iter % 10 == 0)
             printf("  iter %4d | global best = %d\n", iter, global_best);
     }
 

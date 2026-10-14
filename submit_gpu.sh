@@ -8,8 +8,8 @@
 #SBATCH --cpus-per-task=1
 #SBATCH --time=1:59:00
 #SBATCH --exclusive
-#SBATCH --output=R-benchmark-gpu.o%j
-#SBATCH --error=R-benchmark-gpu.e%j
+#SBATCH --output=outputs/out_R-benchmark-gpu.o%j
+#SBATCH --error=outputs/err_R-benchmark-gpu.e%j
 
 # Load required modules
 module purge

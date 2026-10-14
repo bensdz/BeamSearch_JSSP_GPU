@@ -66,6 +66,8 @@ int main(int argc, char** argv)
     int local_best  = 500000;
     int global_best = 500000;
 
+    srand((unsigned)time(NULL) + my_rank);
+
     for (int iter = 0; iter < num_iterations; iter++) {
         int iter_best = run_hybrid_iteration_v2(inst, gpu_beam_width, cpu_beam_width, global_best, my_rank, iter);
 

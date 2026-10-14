@@ -132,8 +132,8 @@ int main(int argc, char** argv)
 
     const int num_runs = 100;
 
-    // Sweep beam width from 100 to 1000
-    for (int k_val = 100; k_val <= 1000; k_val += 100) {
+    // Sweep beam width from 500 to 5000
+    for (int k_val = 500; k_val <= 5000; k_val += 500) {
         int local_min_cmax = 1000000;
         double sum_cmax = 0.0;
         double sum_total_time = 0.0;

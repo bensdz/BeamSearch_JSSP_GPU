@@ -8,8 +8,8 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --time=4:00:00
 #SBATCH --exclusive
-#SBATCH --output=R-benchmark-hybrid.o%j
-#SBATCH --error=R-benchmark-hybrid.e%j
+#SBATCH --output=outputs/out_R-benchmark-hybrid.o%j
+#SBATCH --error=outputs/err_R-benchmark-hybrid.e%j
 
 # Load required modules
 module purge

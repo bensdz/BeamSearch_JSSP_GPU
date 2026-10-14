@@ -54,8 +54,10 @@ int main(int argc, char** argv)
         int local_best  = 500000;
         int global_best = 500000;
 
+        srand((unsigned)time(NULL) + my_rank);
+
         for (int iter = 0; iter < num_iterations; iter++) {
-            int seed = 12345 + my_rank * 1000 + iter;
+            int seed = rand();
             int makespan = run_gpu_beam_search_v2(inst, beam_width, global_best, seed);
 
             if (makespan < local_best)

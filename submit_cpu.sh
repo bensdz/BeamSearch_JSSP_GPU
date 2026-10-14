@@ -6,8 +6,8 @@
 #SBATCH --ntasks-per-node=4
 #SBATCH --cpus-per-task=1
 #SBATCH --time=7:00:00
-#SBATCH --output=R-benchmark-cpu.o%j
-#SBATCH --error=R-benchmark-cpu.e%j
+#SBATCH --output=outputs/out_R-benchmark-cpu.o%j
+#SBATCH --error=outputs/err_R-benchmark-cpu.e%j
 
 # Load required modules (CPU only)
 module purge
